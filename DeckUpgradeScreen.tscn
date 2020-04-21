@@ -1,0 +1,357 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://images/card draft bg.png" type="Texture" id=1]
+[ext_resource path="res://fonts/LexendGiga-Regular.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://images/UI black panel.png" type="Texture" id=3]
+[ext_resource path="res://DeckUpgradeScreen.gd" type="Script" id=4]
+[ext_resource path="res://images/UI Panel Mask.png" type="Texture" id=5]
+[ext_resource path="res://images/card icon grey.png" type="Texture" id=6]
+[ext_resource path="res://images/health hud.png" type="Texture" id=7]
+[ext_resource path="res://images/basic en hud.png" type="Texture" id=8]
+[ext_resource path="res://images/hand icon grey.png" type="Texture" id=9]
+[ext_resource path="res://audio/upgrade bgm.ogg" type="AudioStream" id=10]
+
+[sub_resource type="DynamicFont" id=3]
+size = 24
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 36
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 24
+font_data = ExtResource( 2 )
+
+[node name="DeckUpgradeScreen" type="Node2D"]
+script = ExtResource( 4 )
+
+[node name="Background" type="Sprite" parent="."]
+position = Vector2( 512, 384.438 )
+scale = Vector2( 0.519481, 0.710626 )
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="UI Panel Mask" type="Sprite" parent="."]
+position = Vector2( 524, 448 )
+scale = Vector2( 0.830189, 2.30631 )
+texture = ExtResource( 5 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Done" type="Button" parent="."]
+margin_left = 448.0
+margin_top = 712.0
+margin_right = 576.0
+margin_bottom = 752.0
+custom_fonts/font = SubResource( 3 )
+text = "DONE"
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="UI black panel2" type="Sprite" parent="."]
+position = Vector2( 511.75, 139.5 )
+scale = Vector2( 0.658233, 0.391892 )
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Label2" type="Label" parent="."]
+margin_left = 128.0
+margin_top = 99.0
+margin_right = 896.0
+margin_bottom = 179.0
+custom_fonts/font = SubResource( 2 )
+text = "Add or Upgrade 3 Cards"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="UI black panel" type="Sprite" parent="." groups=[
+"SixCard",
+]]
+position = Vector2( 511.75, 139.5 )
+scale = Vector2( 0.658233, 0.391892 )
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Label" type="Label" parent="." groups=[
+"SixCard",
+]]
+margin_left = 128.0
+margin_top = 99.0
+margin_right = 896.0
+margin_bottom = 179.0
+custom_fonts/font = SubResource( 2 )
+text = "Select 6 Cards To Make A Deck"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="health hud" type="Sprite" parent="."]
+position = Vector2( 276.761, 41.9999 )
+scale = Vector2( 0.226067, 0.239518 )
+texture = ExtResource( 7 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="basic en hud" type="Sprite" parent="."]
+position = Vector2( 428.761, 41.9999 )
+scale = Vector2( 0.290517, 0.308823 )
+texture = ExtResource( 8 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="card icon grey" type="Sprite" parent="."]
+position = Vector2( 772.761, 41.9999 )
+scale = Vector2( 0.395425, 0.369565 )
+texture = ExtResource( 6 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="hand icon grey" type="Sprite" parent="card icon grey"]
+position = Vector2( -343.934, -21.6471 )
+scale = Vector2( 2.02169, 1.90519 )
+texture = ExtResource( 9 )
+
+[node name="CH" type="Label" parent="."]
+margin_left = 252.761
+margin_top = 28.9999
+margin_right = 300.761
+margin_bottom = 60.9999
+custom_fonts/font = SubResource( 4 )
+text = "10"
+align = 1
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="CE" type="Label" parent="."]
+margin_left = 404.761
+margin_top = 27.9999
+margin_right = 452.761
+margin_bottom = 59.9999
+custom_fonts/font = SubResource( 4 )
+text = "10"
+align = 1
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="CHD" type="Label" parent="."]
+margin_left = 612.761
+margin_top = 28.9999
+margin_right = 660.761
+margin_bottom = 60.9999
+custom_fonts/font = SubResource( 4 )
+text = "10"
+align = 1
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="CDR" type="Label" parent="."]
+margin_left = 748.761
+margin_top = 27.9999
+margin_right = 796.761
+margin_bottom = 59.9999
+custom_fonts/font = SubResource( 4 )
+text = "10"
+align = 1
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="fbaCheck" type="CheckBox" parent="." groups=[
+"checks",
+]]
+margin_left = 244.0
+margin_top = 244.0
+margin_right = 268.0
+margin_bottom = 268.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="fbeCheck" type="CheckBox" parent="." groups=[
+"checks",
+]]
+margin_left = 500.0
+margin_top = 244.0
+margin_right = 524.0
+margin_bottom = 268.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="sffCheck" type="CheckBox" parent="." groups=[
+"checks",
+]]
+margin_left = 756.0
+margin_top = 244.0
+margin_right = 780.0
+margin_bottom = 268.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="lsaCheck" type="CheckBox" parent="." groups=[
+"checks",
+]]
+margin_left = 244.0
+margin_top = 372.0
+margin_right = 268.0
+margin_bottom = 396.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="lsgCheck" type="CheckBox" parent="." groups=[
+"checks",
+]]
+margin_left = 500.0
+margin_top = 372.0
+margin_right = 524.0
+margin_bottom = 396.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="sfnCheck" type="CheckBox" parent="." groups=[
+"checks",
+]]
+margin_left = 756.0
+margin_top = 372.0
+margin_right = 780.0
+margin_bottom = 396.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="lbaCheck" type="CheckBox" parent="." groups=[
+"checks",
+]]
+margin_left = 244.0
+margin_top = 501.0
+margin_right = 268.0
+margin_bottom = 525.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="lbeCheck" type="CheckBox" parent="." groups=[
+"checks",
+]]
+margin_left = 500.0
+margin_top = 501.0
+margin_right = 524.0
+margin_bottom = 525.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="sflCheck" type="CheckBox" parent="." groups=[
+"checks",
+]]
+margin_left = 756.0
+margin_top = 501.0
+margin_right = 780.0
+margin_bottom = 525.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="wpaCheck" type="CheckBox" parent="." groups=[
+"checks",
+]]
+margin_left = 244.0
+margin_top = 629.0
+margin_right = 268.0
+margin_bottom = 653.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="mfeCheck" type="CheckBox" parent="." groups=[
+"checks",
+]]
+margin_left = 500.0
+margin_top = 629.0
+margin_right = 524.0
+margin_bottom = 653.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="sfwCheck" type="CheckBox" parent="." groups=[
+"checks",
+]]
+margin_left = 756.0
+margin_top = 629.0
+margin_right = 780.0
+margin_bottom = 653.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="fba" type="Node2D" parent="."]
+position = Vector2( 352, 256 )
+
+[node name="fbe" type="Node2D" parent="."]
+position = Vector2( 608, 256 )
+
+[node name="sff" type="Node2D" parent="."]
+position = Vector2( 864, 256 )
+
+[node name="lsa" type="Node2D" parent="."]
+position = Vector2( 352, 384 )
+
+[node name="lsg" type="Node2D" parent="."]
+position = Vector2( 608, 384 )
+
+[node name="sfn" type="Node2D" parent="."]
+position = Vector2( 864, 384 )
+
+[node name="lba" type="Node2D" parent="."]
+position = Vector2( 352, 513 )
+
+[node name="lbe" type="Node2D" parent="."]
+position = Vector2( 608, 513 )
+
+[node name="sfl" type="Node2D" parent="."]
+position = Vector2( 864, 513 )
+
+[node name="wpa" type="Node2D" parent="."]
+position = Vector2( 352, 640 )
+
+[node name="mfe" type="Node2D" parent="."]
+position = Vector2( 608, 640 )
+
+[node name="sfw" type="Node2D" parent="."]
+position = Vector2( 864, 640 )
+
+[node name="bgm" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 10 )
+volume_db = -6.0
+[connection signal="pressed" from="Done" to="." method="_on_Done_pressed"]

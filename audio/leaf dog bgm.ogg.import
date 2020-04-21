@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/leaf dog bgm.ogg-2f4668ffd55f34cb0a0da58097b83219.oggstr"
+
+[deps]
+
+source_file="res://audio/leaf dog bgm.ogg"
+dest_files=[ "res://.import/leaf dog bgm.ogg-2f4668ffd55f34cb0a0da58097b83219.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/storm1.wav-1a563464a6d96ac8519a9f1cba70be63.sample"
+
+[deps]
+
+source_file="res://audio/storm1.wav"
+dest_files=[ "res://.import/storm1.wav-1a563464a6d96ac8519a9f1cba70be63.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

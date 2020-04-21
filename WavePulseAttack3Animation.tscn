@@ -1,0 +1,161 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://images/wp31.png" type="Texture" id=1]
+[ext_resource path="res://images/wp32.png" type="Texture" id=2]
+[ext_resource path="res://LeafShurikenAttack1Animation.gd" type="Script" id=3]
+[ext_resource path="res://audio/waves.wav" type="AudioStream" id=4]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 1 ), ExtResource( 2 ) ],
+"loop": true,
+"name": "basic",
+"speed": 5.0
+} ]
+
+[sub_resource type="Animation" id=2]
+resource_name = "wpa3Enemy"
+length = 2.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimatedSprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5, 2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 512, 176 ), Vector2( 512, 296 ), Vector2( 520, 376 ), Vector2( 536, 496.124 ), Vector2( 536, 576 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("AnimatedSprite:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 2, 2.1, 2.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ true, true, false, false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("AnimatedSprite:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5, 2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 3.55298, 5.28614 ), Vector2( 4.30476, 5.28614 ), Vector2( 5.62933, 6.28852 ), Vector2( 3.58877, 6.28852 ), Vector2( 4.98494, 6.28852 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("AnimatedSprite:rotation_degrees")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 90.0, 90.0 ]
+}
+tracks/4/type = "audio"
+tracks/4/path = NodePath("AudioStreamPlayer2D")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"clips": [ {
+"end_offset": 3.06608,
+"start_offset": 0.0,
+"stream": ExtResource( 4 )
+} ],
+"times": PoolRealArray( 0 )
+}
+
+[sub_resource type="Animation" id=3]
+length = 2.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimatedSprite:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2, 2.1, 2.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ true, true, false, false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("AnimatedSprite:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5, 2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 504, 584 ), Vector2( 512, 473.585 ), Vector2( 512, 408 ), Vector2( 504, 248 ), Vector2( 504, 174.94 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("AnimatedSprite:rotation_degrees")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ -90.0, -90.0 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("AnimatedSprite:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5, 2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 3.48137, 3.88997 ), Vector2( 5.19974, 5.96633 ), Vector2( 3.87517, 5.96633 ), Vector2( 3.19499, 5.96633 ), Vector2( 4.44796, 5.96633 ) ]
+}
+tracks/4/type = "audio"
+tracks/4/path = NodePath("AudioStreamPlayer2D")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"clips": [ {
+"end_offset": 3.03224,
+"start_offset": 0.0,
+"stream": ExtResource( 4 )
+} ],
+"times": PoolRealArray( 0 )
+}
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 504, 584 )
+rotation = -1.5708
+scale = Vector2( 3.48137, 3.88997 )
+frames = SubResource( 1 )
+animation = "basic"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/wpa3Enemy = SubResource( 2 )
+anims/wpa3Player = SubResource( 3 )
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]

@@ -1,0 +1,631 @@
+[gd_scene load_steps=21 format=2]
+
+[ext_resource path="res://images/refresh hud.png" type="Texture" id=1]
+[ext_resource path="res://images/lning en hud bg.png" type="Texture" id=2]
+[ext_resource path="res://images/nature en hud bg.png" type="Texture" id=3]
+[ext_resource path="res://images/water en hud bg.png" type="Texture" id=4]
+[ext_resource path="res://fonts/Quicksand-Bold.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://images/shock hud.png" type="Texture" id=6]
+[ext_resource path="res://images/bloom2 hud.png" type="Texture" id=7]
+[ext_resource path="res://images/burn hud.png" type="Texture" id=8]
+[ext_resource path="res://images/basic en hud.png" type="Texture" id=9]
+[ext_resource path="res://images/fire en hud bg.png" type="Texture" id=10]
+[ext_resource path="res://images/health hud.png" type="Texture" id=11]
+[ext_resource path="res://fonts/LexendGiga-Regular.ttf" type="DynamicFontData" id=12]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 12 )
+
+[sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 12 )
+
+[sub_resource type="DynamicFont" id=3]
+font_data = ExtResource( 12 )
+
+[sub_resource type="DynamicFont" id=4]
+font_data = ExtResource( 12 )
+
+[sub_resource type="DynamicFont" id=5]
+font_data = ExtResource( 12 )
+
+[sub_resource type="DynamicFont" id=6]
+font_data = ExtResource( 12 )
+
+[sub_resource type="Theme" id=7]
+background/colors/bg-color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="DynamicFont" id=8]
+size = 20
+font_data = ExtResource( 5 )
+
+[node name="HUD" type="CanvasLayer"]
+__meta__ = {
+"_edit_horizontal_guides_": [ 688.0, 720.0 ],
+"_edit_vertical_guides_": [ 448.0, 576.0 ]
+}
+
+[node name="Start" type="Button" parent="."]
+margin_left = 816.0
+margin_top = 256.0
+margin_right = 1008.0
+margin_bottom = 296.0
+custom_fonts/font = SubResource( 1 )
+text = "START"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="EndTurn" type="Button" parent="."]
+margin_left = 816.0
+margin_top = 320.0
+margin_right = 1008.0
+margin_bottom = 360.0
+custom_fonts/font = SubResource( 2 )
+text = "END TURN"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="EnemyDeck" type="Label" parent="."]
+anchor_right = 0.008
+anchor_bottom = 0.031
+margin_left = 944.0
+margin_top = 8.0
+margin_right = 975.776
+margin_bottom = -1.808
+custom_fonts/font = SubResource( 3 )
+text = "DECK"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="EnemyDiscard" type="Label" parent="."]
+margin_left = 808.0
+margin_top = 8.0
+margin_right = 865.0
+margin_bottom = 22.0
+custom_fonts/font = SubResource( 4 )
+text = "DISCARD"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayerDiscard" type="Label" parent="."]
+margin_left = 168.0
+margin_top = 635.0
+margin_right = 264.0
+margin_bottom = 655.0
+custom_fonts/font = SubResource( 5 )
+text = "DISCARD"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayerDeck" type="Label" parent="."]
+margin_left = 44.0
+margin_top = 636.0
+margin_right = 101.0
+margin_bottom = 656.0
+custom_fonts/font = SubResource( 6 )
+text = "DECK"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayerDetailsPanel" type="Panel" parent="."]
+visible = false
+margin_left = 40.0
+margin_top = 328.0
+margin_right = 264.0
+margin_bottom = 504.0
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="PlayerDetails" type="GridContainer" parent="PlayerDetailsPanel"]
+margin_left = 11.0
+margin_right = 235.0
+margin_bottom = 176.0
+theme = SubResource( 7 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Health" type="Label" parent="PlayerDetailsPanel/PlayerDetails"]
+margin_right = 84.0
+margin_bottom = 14.0
+text = "Health : 10"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Energy" type="Label" parent="PlayerDetailsPanel/PlayerDetails"]
+margin_top = 18.0
+margin_right = 84.0
+margin_bottom = 32.0
+text = "Energy : 2"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FireEnergy" type="Label" parent="PlayerDetailsPanel/PlayerDetails"]
+margin_top = 36.0
+margin_right = 84.0
+margin_bottom = 50.0
+text = "Fire : 0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NatureEnergy" type="Label" parent="PlayerDetailsPanel/PlayerDetails"]
+margin_top = 54.0
+margin_right = 84.0
+margin_bottom = 68.0
+text = "Nature : 0"
+
+[node name="WaterEnergy" type="Label" parent="PlayerDetailsPanel/PlayerDetails"]
+margin_top = 72.0
+margin_right = 84.0
+margin_bottom = 86.0
+text = "Water : 0"
+
+[node name="LightningEnergy" type="Label" parent="PlayerDetailsPanel/PlayerDetails"]
+margin_top = 90.0
+margin_right = 84.0
+margin_bottom = 104.0
+text = "Lightning : 0"
+
+[node name="Burnt" type="Label" parent="PlayerDetailsPanel/PlayerDetails"]
+margin_top = 108.0
+margin_right = 84.0
+margin_bottom = 122.0
+text = "Burnt : 0"
+
+[node name="Rooted" type="Label" parent="PlayerDetailsPanel/PlayerDetails"]
+margin_top = 126.0
+margin_right = 84.0
+margin_bottom = 140.0
+text = "Rooted : 0"
+
+[node name="Refreshed" type="Label" parent="PlayerDetailsPanel/PlayerDetails"]
+margin_top = 144.0
+margin_right = 84.0
+margin_bottom = 158.0
+text = "Refreshed : 0"
+
+[node name="Shocked" type="Label" parent="PlayerDetailsPanel/PlayerDetails"]
+margin_top = 162.0
+margin_right = 84.0
+margin_bottom = 176.0
+text = "Shocked : 0"
+
+[node name="EnemyDetailsPanel" type="Panel" parent="."]
+visible = false
+margin_left = 320.0
+margin_top = 328.0
+margin_right = 544.0
+margin_bottom = 504.0
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="PlayerDetails" type="GridContainer" parent="EnemyDetailsPanel"]
+margin_left = 10.0
+margin_right = 234.0
+margin_bottom = 176.0
+theme = SubResource( 7 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Health" type="Label" parent="EnemyDetailsPanel/PlayerDetails"]
+margin_right = 84.0
+margin_bottom = 14.0
+text = "Health : 10"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Energy" type="Label" parent="EnemyDetailsPanel/PlayerDetails"]
+margin_top = 18.0
+margin_right = 84.0
+margin_bottom = 32.0
+text = "Energy : 2"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FireEnergy" type="Label" parent="EnemyDetailsPanel/PlayerDetails"]
+margin_top = 36.0
+margin_right = 84.0
+margin_bottom = 50.0
+text = "Fire : 0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NatureEnergy" type="Label" parent="EnemyDetailsPanel/PlayerDetails"]
+margin_top = 54.0
+margin_right = 84.0
+margin_bottom = 68.0
+text = "Nature : 0"
+
+[node name="WaterEnergy" type="Label" parent="EnemyDetailsPanel/PlayerDetails"]
+margin_top = 72.0
+margin_right = 84.0
+margin_bottom = 86.0
+text = "Water : 0"
+
+[node name="LightningEnergy" type="Label" parent="EnemyDetailsPanel/PlayerDetails"]
+margin_top = 90.0
+margin_right = 84.0
+margin_bottom = 104.0
+text = "Lightning : 0"
+
+[node name="Burnt" type="Label" parent="EnemyDetailsPanel/PlayerDetails"]
+margin_top = 108.0
+margin_right = 84.0
+margin_bottom = 122.0
+text = "Burnt : 0"
+
+[node name="Rooted" type="Label" parent="EnemyDetailsPanel/PlayerDetails"]
+margin_top = 126.0
+margin_right = 84.0
+margin_bottom = 140.0
+text = "Rooted : 0"
+
+[node name="Refreshed" type="Label" parent="EnemyDetailsPanel/PlayerDetails"]
+margin_top = 144.0
+margin_right = 84.0
+margin_bottom = 158.0
+text = "Refreshed : 0"
+
+[node name="Shocked" type="Label" parent="EnemyDetailsPanel/PlayerDetails"]
+margin_top = 162.0
+margin_right = 84.0
+margin_bottom = 176.0
+text = "Shocked : 0"
+
+[node name="pHealth" type="Sprite" parent="."]
+position = Vector2( 624, 640 )
+scale = Vector2( 0.165404, 0.203014 )
+texture = ExtResource( 11 )
+
+[node name="pBurn" type="Sprite" parent="."]
+position = Vector2( 885, 640 )
+scale = Vector2( 0.352128, 0.301064 )
+texture = ExtResource( 8 )
+
+[node name="pEnBasic" type="Sprite" parent="."]
+position = Vector2( 624, 720 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 9 )
+
+[node name="pBloom" type="Sprite" parent="."]
+position = Vector2( 712, 640 )
+scale = Vector2( 0.352128, 0.329787 )
+texture = ExtResource( 7 )
+
+[node name="pEnFire" type="Sprite" parent="."]
+position = Vector2( 886, 720 )
+scale = Vector2( 0.25, 0.264 )
+texture = ExtResource( 10 )
+
+[node name="pEnLight" type="Sprite" parent="."]
+position = Vector2( 974, 720 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 2 )
+
+[node name="pEnNature" type="Sprite" parent="."]
+position = Vector2( 712, 720 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 3 )
+
+[node name="pEnWater" type="Sprite" parent="."]
+position = Vector2( 800, 720 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 4 )
+
+[node name="pShock" type="Sprite" parent="."]
+position = Vector2( 976, 648 )
+scale = Vector2( 0.36383, 0.38617 )
+texture = ExtResource( 6 )
+
+[node name="pRefresh" type="Sprite" parent="."]
+position = Vector2( 800, 640 )
+scale = Vector2( 0.373518, 0.341897 )
+texture = ExtResource( 1 )
+
+[node name="pHealth2" type="Sprite" parent="."]
+position = Vector2( 408, 120 )
+scale = Vector2( 0.165404, 0.203014 )
+texture = ExtResource( 11 )
+
+[node name="pBurn2" type="Sprite" parent="."]
+position = Vector2( 144, 120 )
+scale = Vector2( 0.352128, 0.301064 )
+texture = ExtResource( 8 )
+
+[node name="pEnBasic2" type="Sprite" parent="."]
+position = Vector2( 408, 40 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 9 )
+
+[node name="pBloom2" type="Sprite" parent="."]
+position = Vector2( 320, 120 )
+scale = Vector2( 0.352128, 0.329787 )
+texture = ExtResource( 7 )
+
+[node name="pEnFire2" type="Sprite" parent="."]
+position = Vector2( 144, 40 )
+scale = Vector2( 0.25, 0.264 )
+texture = ExtResource( 10 )
+
+[node name="pEnLight2" type="Sprite" parent="."]
+position = Vector2( 56, 40 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 2 )
+
+[node name="pEnNature2" type="Sprite" parent="."]
+position = Vector2( 320, 40 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 3 )
+
+[node name="pEnWater2" type="Sprite" parent="."]
+position = Vector2( 232, 40 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 4 )
+
+[node name="pShock2" type="Sprite" parent="."]
+position = Vector2( 61, 122 )
+scale = Vector2( 0.36383, 0.38617 )
+texture = ExtResource( 6 )
+
+[node name="pRefresh2" type="Sprite" parent="."]
+position = Vector2( 232, 120 )
+scale = Vector2( 0.373518, 0.341897 )
+texture = ExtResource( 1 )
+
+[node name="PlayerBurnt" type="Label" parent="."]
+margin_left = 862.0
+margin_top = 620.0
+margin_right = 909.0
+margin_bottom = 645.0
+custom_fonts/font = SubResource( 8 )
+text = "0"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayerRooted" type="Label" parent="."]
+margin_left = 688.0
+margin_top = 620.0
+margin_right = 735.0
+margin_bottom = 645.0
+custom_fonts/font = SubResource( 8 )
+text = "0"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayerShocked" type="Label" parent="."]
+margin_left = 952.0
+margin_top = 620.0
+margin_right = 999.0
+margin_bottom = 645.0
+custom_fonts/font = SubResource( 8 )
+text = "0"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayerRefreshed" type="Label" parent="."]
+margin_left = 776.0
+margin_top = 620.0
+margin_right = 823.0
+margin_bottom = 645.0
+custom_fonts/font = SubResource( 8 )
+text = "0"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayerHealth" type="Label" parent="."]
+margin_left = 600.0
+margin_top = 628.0
+margin_right = 647.0
+margin_bottom = 653.0
+custom_fonts/font = SubResource( 8 )
+text = "0"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayerEnergy" type="Label" parent="."]
+margin_left = 600.0
+margin_top = 707.0
+margin_right = 647.0
+margin_bottom = 732.0
+custom_fonts/font = SubResource( 8 )
+text = "0"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayerFireEnergy" type="Label" parent="."]
+margin_left = 863.0
+margin_top = 707.0
+margin_right = 910.0
+margin_bottom = 732.0
+custom_fonts/font = SubResource( 8 )
+text = "0"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayerNatureEnergy" type="Label" parent="."]
+margin_left = 689.0
+margin_top = 707.0
+margin_right = 736.0
+margin_bottom = 732.0
+custom_fonts/font = SubResource( 8 )
+text = "0"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayerWaterEnergy" type="Label" parent="."]
+margin_left = 777.0
+margin_top = 707.0
+margin_right = 824.0
+margin_bottom = 732.0
+custom_fonts/font = SubResource( 8 )
+text = "0"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayerLightningEnergy" type="Label" parent="."]
+margin_left = 952.0
+margin_top = 707.0
+margin_right = 999.0
+margin_bottom = 732.0
+custom_fonts/font = SubResource( 8 )
+text = "0"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="EnemyBurnt" type="Label" parent="."]
+margin_left = 120.0
+margin_top = 102.0
+margin_right = 167.0
+margin_bottom = 127.0
+custom_fonts/font = SubResource( 8 )
+text = "0"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="EnemyRooted" type="Label" parent="."]
+margin_left = 296.0
+margin_top = 101.0
+margin_right = 343.0
+margin_bottom = 126.0
+custom_fonts/font = SubResource( 8 )
+text = "0"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="EnemyShocked" type="Label" parent="."]
+margin_left = 34.0
+margin_top = 102.0
+margin_right = 81.0
+margin_bottom = 127.0
+custom_fonts/font = SubResource( 8 )
+text = "0"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="EnemyRefreshed" type="Label" parent="."]
+margin_left = 209.0
+margin_top = 102.0
+margin_right = 256.0
+margin_bottom = 127.0
+custom_fonts/font = SubResource( 8 )
+text = "0"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="EnemyHealth" type="Label" parent="."]
+margin_left = 385.0
+margin_top = 106.0
+margin_right = 432.0
+margin_bottom = 131.0
+custom_fonts/font = SubResource( 8 )
+text = "0"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="EnemyEnergy" type="Label" parent="."]
+margin_left = 385.0
+margin_top = 28.0
+margin_right = 432.0
+margin_bottom = 53.0
+custom_fonts/font = SubResource( 8 )
+text = "0"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="EnemyFireEnergy" type="Label" parent="."]
+margin_left = 121.0
+margin_top = 27.0
+margin_right = 168.0
+margin_bottom = 52.0
+custom_fonts/font = SubResource( 8 )
+text = "0"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="EnemyNatureEnergy" type="Label" parent="."]
+margin_left = 297.0
+margin_top = 28.0
+margin_right = 344.0
+margin_bottom = 53.0
+custom_fonts/font = SubResource( 8 )
+text = "0"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="EnemyWaterEnergy" type="Label" parent="."]
+margin_left = 209.0
+margin_top = 28.0
+margin_right = 256.0
+margin_bottom = 53.0
+custom_fonts/font = SubResource( 8 )
+text = "0"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="EnemyLightningEnergy" type="Label" parent="."]
+margin_left = 32.0
+margin_top = 28.0
+margin_right = 79.0
+margin_bottom = 53.0
+custom_fonts/font = SubResource( 8 )
+text = "0"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}

@@ -1,0 +1,333 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://images/card draft bg.png" type="Texture" id=1]
+[ext_resource path="res://fonts/LexendGiga-Regular.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://images/UI black panel.png" type="Texture" id=3]
+[ext_resource path="res://images/UI Panel Mask.png" type="Texture" id=4]
+[ext_resource path="res://ChooseUpgradeScreen.gd" type="Script" id=5]
+[ext_resource path="res://images/card icon grey.png" type="Texture" id=6]
+[ext_resource path="res://images/health hud.png" type="Texture" id=7]
+[ext_resource path="res://images/basic en hud.png" type="Texture" id=8]
+[ext_resource path="res://images/hand icon grey.png" type="Texture" id=9]
+[ext_resource path="res://audio/upgrade bgm.ogg" type="AudioStream" id=10]
+
+[sub_resource type="DynamicFont" id=5]
+size = 24
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 36
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 24
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 24
+font_data = ExtResource( 2 )
+
+[node name="CardSelectionRoom" type="Node2D"]
+script = ExtResource( 5 )
+
+[node name="Background" type="Sprite" parent="."]
+position = Vector2( 512, 384.438 )
+scale = Vector2( 0.519481, 0.710626 )
+texture = ExtResource( 1 )
+
+[node name="Done" type="Button" parent="."]
+margin_left = 416.0
+margin_top = 600.0
+margin_right = 672.0
+margin_bottom = 640.0
+custom_fonts/font = SubResource( 5 )
+text = "DONE"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="UI black panel" type="Sprite" parent="."]
+position = Vector2( 544.75, 142.5 )
+scale = Vector2( 0.658233, 0.391892 )
+texture = ExtResource( 3 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 161.0
+margin_top = 102.0
+margin_right = 929.0
+margin_bottom = 182.0
+custom_fonts/font = SubResource( 6 )
+text = "Select Any Two Upgrades"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Health" type="Sprite" parent="."]
+position = Vector2( 576.063, 233.75 )
+scale = Vector2( 0.548778, 0.231982 )
+texture = ExtResource( 3 )
+
+[node name="Label2" type="Label" parent="."]
+margin_left = 256.0
+margin_top = 210.0
+margin_right = 896.0
+margin_bottom = 258.0
+custom_fonts/font = SubResource( 7 )
+text = "Increase Health And Energy"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Health2" type="Sprite" parent="."]
+position = Vector2( 384, 296 )
+scale = Vector2( 0.219447, 0.231982 )
+texture = ExtResource( 3 )
+
+[node name="Health4" type="Sprite" parent="."]
+position = Vector2( 384, 425.752 )
+scale = Vector2( 0.219447, 0.231982 )
+texture = ExtResource( 3 )
+
+[node name="Health3" type="Sprite" parent="."]
+position = Vector2( 768, 296 )
+scale = Vector2( 0.219447, 0.231982 )
+texture = ExtResource( 3 )
+
+[node name="health hud" type="Sprite" parent="."]
+position = Vector2( 304, 48 )
+scale = Vector2( 0.226067, 0.239518 )
+texture = ExtResource( 7 )
+
+[node name="basic en hud" type="Sprite" parent="."]
+position = Vector2( 456, 48 )
+scale = Vector2( 0.290517, 0.308823 )
+texture = ExtResource( 8 )
+
+[node name="Health5" type="Sprite" parent="."]
+position = Vector2( 768, 425.752 )
+scale = Vector2( 0.219447, 0.231982 )
+texture = ExtResource( 3 )
+
+[node name="HealthLabel" type="Label" parent="."]
+margin_left = 256.0
+margin_top = 272.0
+margin_right = 512.0
+margin_bottom = 320.0
+rect_pivot_offset = Vector2( 184, 32 )
+custom_fonts/font = SubResource( 7 )
+text = "+ 10 HEALTH"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HandLabel" type="Label" parent="."]
+margin_left = 256.0
+margin_top = 401.752
+margin_right = 512.0
+margin_bottom = 449.752
+rect_pivot_offset = Vector2( 184, 32 )
+custom_fonts/font = SubResource( 7 )
+text = "+ 1 HAND"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="EnergyLabel" type="Label" parent="."]
+margin_left = 640.0
+margin_top = 272.0
+margin_right = 896.0
+margin_bottom = 320.0
+rect_pivot_offset = Vector2( 184, 32 )
+custom_fonts/font = SubResource( 7 )
+text = "+ 1 ENERGY"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CardLabel" type="Label" parent="."]
+margin_left = 640.0
+margin_top = 401.752
+margin_right = 896.0
+margin_bottom = 449.752
+rect_pivot_offset = Vector2( 184, 32 )
+custom_fonts/font = SubResource( 7 )
+text = "+ 1 DRAW"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Hand" type="Sprite" parent="."]
+position = Vector2( 576.063, 361.75 )
+scale = Vector2( 0.548778, 0.231982 )
+texture = ExtResource( 3 )
+
+[node name="Label3" type="Label" parent="."]
+margin_left = 256.0
+margin_top = 338.0
+margin_right = 896.0
+margin_bottom = 386.0
+custom_fonts/font = SubResource( 7 )
+text = "Increase Hand Limit and Card Draw"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Deck" type="Sprite" parent="."]
+position = Vector2( 576.063, 489.75 )
+scale = Vector2( 0.548778, 0.231982 )
+texture = ExtResource( 3 )
+
+[node name="Label4" type="Label" parent="."]
+margin_left = 256.0
+margin_top = 464.0
+margin_right = 896.0
+margin_bottom = 512.0
+custom_fonts/font = SubResource( 7 )
+text = "Upgrade Deck (3 Cards)"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HandMask" type="Sprite" parent="."]
+position = Vector2( 576.048, 360 )
+scale = Vector2( 0.548804, 0.232 )
+texture = ExtResource( 4 )
+
+[node name="DeckMask" type="Sprite" parent="."]
+position = Vector2( 574.024, 488 )
+scale = Vector2( 0.552275, 0.232 )
+texture = ExtResource( 4 )
+
+[node name="HealthMask" type="Sprite" parent="."]
+position = Vector2( 574.024, 232 )
+scale = Vector2( 0.552275, 0.232 )
+texture = ExtResource( 4 )
+
+[node name="HealthMask2" type="Sprite" parent="."]
+position = Vector2( 384, 296 )
+scale = Vector2( 0.219513, 0.232 )
+texture = ExtResource( 4 )
+
+[node name="HealthMask4" type="Sprite" parent="."]
+position = Vector2( 384, 425.752 )
+scale = Vector2( 0.219513, 0.232 )
+texture = ExtResource( 4 )
+
+[node name="HealthMask3" type="Sprite" parent="."]
+position = Vector2( 768, 296 )
+scale = Vector2( 0.219513, 0.232 )
+texture = ExtResource( 4 )
+
+[node name="HealthMask5" type="Sprite" parent="."]
+position = Vector2( 768, 425.752 )
+scale = Vector2( 0.219513, 0.232 )
+texture = ExtResource( 4 )
+
+[node name="HealthCheck" type="CheckBox" parent="."]
+margin_left = 200.0
+margin_top = 224.0
+margin_right = 224.0
+margin_bottom = 248.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HandCheck" type="CheckBox" parent="."]
+margin_left = 200.0
+margin_top = 352.0
+margin_right = 224.0
+margin_bottom = 376.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DeckCheck" type="CheckBox" parent="."]
+margin_left = 200.0
+margin_top = 480.0
+margin_right = 224.0
+margin_bottom = 504.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="card icon grey" type="Sprite" parent="."]
+position = Vector2( 800, 48 )
+scale = Vector2( 0.395425, 0.369565 )
+texture = ExtResource( 6 )
+
+[node name="hand icon grey" type="Sprite" parent="card icon grey"]
+position = Vector2( -343.934, -21.6471 )
+scale = Vector2( 2.02169, 1.90519 )
+texture = ExtResource( 9 )
+
+[node name="CH" type="Label" parent="."]
+margin_left = 280.0
+margin_top = 35.0
+margin_right = 328.0
+margin_bottom = 67.0
+custom_fonts/font = SubResource( 4 )
+text = "10"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CE" type="Label" parent="."]
+margin_left = 432.0
+margin_top = 34.0
+margin_right = 480.0
+margin_bottom = 66.0
+custom_fonts/font = SubResource( 4 )
+text = "10"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CHD" type="Label" parent="."]
+margin_left = 640.0
+margin_top = 35.0
+margin_right = 688.0
+margin_bottom = 67.0
+custom_fonts/font = SubResource( 4 )
+text = "10"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CDR" type="Label" parent="."]
+margin_left = 776.0
+margin_top = 34.0
+margin_right = 824.0
+margin_bottom = 66.0
+custom_fonts/font = SubResource( 4 )
+text = "10"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="bgm" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 10 )
+volume_db = -6.0
+[connection signal="pressed" from="Done" to="." method="_on_Done_pressed"]
+[connection signal="toggled" from="HealthCheck" to="." method="_on_HealthCheck_toggled"]
+[connection signal="toggled" from="HandCheck" to="." method="_on_HandCheck_toggled"]
+[connection signal="toggled" from="DeckCheck" to="." method="_on_DeckCheck_toggled"]

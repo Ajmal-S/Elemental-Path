@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/toad sage bgm.ogg-0591830fe8339caf698c296f43a31f10.oggstr"
+
+[deps]
+
+source_file="res://audio/toad sage bgm.ogg"
+dest_files=[ "res://.import/toad sage bgm.ogg-0591830fe8339caf698c296f43a31f10.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

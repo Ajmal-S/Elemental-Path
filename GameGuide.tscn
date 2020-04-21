@@ -1,0 +1,634 @@
+[gd_scene load_steps=41 format=2]
+
+[ext_resource path="res://fonts/LexendGiga-Regular.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://GameGuide.gd" type="Script" id=2]
+[ext_resource path="res://images/card draft bg.png" type="Texture" id=3]
+[ext_resource path="res://images/guidimage1.png" type="Texture" id=4]
+[ext_resource path="res://images/guide image 2.png" type="Texture" id=5]
+[ext_resource path="res://images/sfw32.png" type="Texture" id=6]
+[ext_resource path="res://images/sfw31.png" type="Texture" id=7]
+[ext_resource path="res://images/refresh hud.png" type="Texture" id=8]
+[ext_resource path="res://images/burn hud.png" type="Texture" id=9]
+[ext_resource path="res://images/shock hud.png" type="Texture" id=10]
+[ext_resource path="res://images/bloom2 hud.png" type="Texture" id=11]
+[ext_resource path="res://images/guide image 3.png" type="Texture" id=12]
+[ext_resource path="res://images/phl2.png" type="Texture" id=13]
+[ext_resource path="res://images/pdmg1.png" type="Texture" id=14]
+[ext_resource path="res://images/pdmg2.png" type="Texture" id=15]
+[ext_resource path="res://images/phl1.png" type="Texture" id=16]
+[ext_resource path="res://images/pdsc2.png" type="Texture" id=17]
+[ext_resource path="res://images/pdsc1.png" type="Texture" id=18]
+[ext_resource path="res://images/pdrw1.png" type="Texture" id=19]
+[ext_resource path="res://images/pdrw2.png" type="Texture" id=20]
+[ext_resource path="res://images/enemy1.png" type="Texture" id=21]
+[ext_resource path="res://images/enemy2.png" type="Texture" id=22]
+[ext_resource path="res://images/enemy3.png" type="Texture" id=23]
+[ext_resource path="res://images/enemy4.png" type="Texture" id=24]
+[ext_resource path="res://audio/title.ogg" type="AudioStream" id=25]
+
+[sub_resource type="DynamicFont" id=1]
+size = 24
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 32
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=4]
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=5]
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=6]
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=7]
+font_data = ExtResource( 1 )
+
+[sub_resource type="SpriteFrames" id=8]
+animations = [ {
+"frames": [ ExtResource( 7 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="DynamicFont" id=9]
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=10]
+font_data = ExtResource( 1 )
+
+[sub_resource type="SpriteFrames" id=11]
+animations = [ {
+"frames": [ ExtResource( 14 ), ExtResource( 15 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=12]
+animations = [ {
+"frames": [ ExtResource( 18 ), ExtResource( 17 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=13]
+animations = [ {
+"frames": [ ExtResource( 16 ), ExtResource( 13 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=14]
+animations = [ {
+"frames": [ ExtResource( 19 ), ExtResource( 20 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="DynamicFont" id=15]
+font_data = ExtResource( 1 )
+
+[node name="GameGuide" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="card draft bg" type="Sprite" parent="."]
+position = Vector2( 664, 440 )
+texture = ExtResource( 3 )
+
+[node name="Back" type="Button" parent="."]
+margin_left = 16.0
+margin_top = 16.0
+margin_right = 112.0
+margin_bottom = 52.0
+custom_fonts/font = SubResource( 1 )
+text = "BACK"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Control" type="Control" parent="."]
+margin_left = 64.0
+margin_top = 72.0
+margin_right = 960.0
+margin_bottom = 704.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TabContainer" type="TabContainer" parent="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+tab_align = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Introduction" type="Tabs" parent="Control/TabContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 32.0
+margin_right = -4.0
+margin_bottom = -4.0
+custom_fonts/font = SubResource( 2 )
+
+[node name="Label" type="Label" parent="Control/TabContainer/Introduction"]
+margin_left = -4.0
+margin_top = 8.0
+margin_right = 892.0
+margin_bottom = 88.0
+custom_fonts/font = SubResource( 3 )
+text = "Welcome to The Elemental Path!"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="Control/TabContainer/Introduction"]
+margin_left = 36.0
+margin_top = 89.0
+margin_right = 820.0
+margin_bottom = 201.0
+custom_fonts/font = SubResource( 4 )
+text = "In this game you play as a wizard who wants to master the magic of the elements. Having learnt all you could from human teachers, you turn to the elemental valley. Your quest for knowledge brings you to conflict with the spirits of the valley and now you must defeat the storm queen herself to ensure your safety. "
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label3" type="Label" parent="Control/TabContainer/Introduction"]
+margin_left = 36.0
+margin_top = 218.0
+margin_right = 820.0
+margin_bottom = 288.0
+custom_fonts/font = SubResource( 4 )
+text = "To win the game you must defeat four enemy spirits. You will fight these spirits using a deck of spells. The tabs to the right on this guide will help you understand the concept of the spells and the nature of the battles."
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Deck" type="Tabs" parent="Control/TabContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 32.0
+margin_right = -4.0
+margin_bottom = -4.0
+custom_fonts/font = SubResource( 2 )
+
+[node name="Label" type="Label" parent="Control/TabContainer/Deck"]
+margin_left = 20.0
+margin_top = 32.0
+margin_right = 868.0
+margin_bottom = 282.0
+custom_fonts/font = SubResource( 5 )
+text = "As you begin the game you will be given the oppurtunity to select six cards to make your initial deck of spells. As you can see in the image below hovering over a card will give you the details of that card such as it's name, cost and effect. 
+You can also determine the element of the card based on the color of the tooltip: 
+Red - Fire
+Brown - Nature
+Blue - Water
+Yellow - Storm"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="guidimage1" type="Sprite" parent="Control/TabContainer/Deck"]
+position = Vector2( 476, 280 )
+scale = Vector2( 0.44265, 0.425667 )
+texture = ExtResource( 4 )
+
+[node name="Label2" type="Label" parent="Control/TabContainer/Deck"]
+margin_left = 20.0
+margin_top = 428.0
+margin_right = 868.0
+margin_bottom = 492.0
+custom_fonts/font = SubResource( 6 )
+text = "Later in the game you will also have the oppurtunity to either improve the cards in your deck or add new ones."
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label3" type="Label" parent="Control/TabContainer/Deck"]
+margin_left = 20.0
+margin_top = 496.0
+margin_right = 868.0
+margin_bottom = 585.0
+custom_fonts/font = SubResource( 6 )
+text = "The indicators on the top of the Deck selection/upgrade scene tell you your current stats. These include your health, your energy, the number of cards you can hold in your hand at a time and the number of cards you draw at the end of your turn"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Energy " type="Tabs" parent="Control/TabContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 32.0
+margin_right = -4.0
+margin_bottom = -4.0
+custom_fonts/font = SubResource( 2 )
+
+[node name="Label" type="Label" parent="Control/TabContainer/Energy "]
+margin_left = 12.0
+margin_top = 24.0
+margin_right = 824.0
+margin_bottom = 72.0
+custom_fonts/font = SubResource( 7 )
+text = "Energy is the resource you pay to play a spell. The image below is the status panel you will see on the bottom right-hand corner of your screen during a battle. 
+The row at the bottom holds information about the amount of energy currently available to you. "
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="Control/TabContainer/Energy "]
+margin_left = 292.0
+margin_top = 144.0
+margin_right = 884.0
+margin_bottom = 256.0
+custom_fonts/font = SubResource( 7 )
+text = "The first indicator is the amount of normal energy you have. This is typically the resource you will use while playing a spell. Notice that there are four addiitonal panels. These show the specific elemental energy available to you. "
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label3" type="Label" parent="Control/TabContainer/Energy "]
+margin_left = 12.0
+margin_top = 280.0
+margin_right = 860.0
+margin_bottom = 328.0
+custom_fonts/font = SubResource( 7 )
+text = "You start the game with 2 normal energy and at the start of the your turn, it will be restored to this value. Later in the game you will have oppurtunities to increase the amount of normal energy you have. "
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label4" type="Label" parent="Control/TabContainer/Energy "]
+margin_left = 12.0
+margin_top = 364.0
+margin_right = 860.0
+margin_bottom = 436.0
+custom_fonts/font = SubResource( 7 )
+text = "Elemental energy can be used to pay for spells belonging to the same element only. There is no limit on how much elemental energy you can accumulate during a battle but it does not restore itself and will be lost once the battle ends."
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label5" type="Label" parent="Control/TabContainer/Energy "]
+margin_left = 12.0
+margin_top = 448.0
+margin_right = 636.0
+margin_bottom = 528.0
+custom_fonts/font = SubResource( 7 )
+text = "Elemental energy is gained by playing sacrifice fairy spells. The spell can be seen on the right. It is a versatile card that has addiitonal effects based on status effects. "
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="Control/TabContainer/Energy "]
+position = Vector2( 152.5, 200 )
+scale = Vector2( 0.351604, 0.410256 )
+texture = ExtResource( 5 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Control/TabContainer/Energy "]
+position = Vector2( 716, 480 )
+scale = Vector2( 1.9, 1.7 )
+frames = SubResource( 8 )
+frame = 1
+playing = true
+
+[node name="Status Effects" type="Tabs" parent="Control/TabContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 32.0
+margin_right = -4.0
+margin_bottom = -4.0
+custom_fonts/font = SubResource( 2 )
+
+[node name="Label" type="Label" parent="Control/TabContainer/Status Effects"]
+margin_left = 20.0
+margin_top = 72.0
+margin_right = 855.0
+margin_bottom = 144.0
+custom_fonts/font = SubResource( 9 )
+text = "The top row of the status panel displays your current health and the number of turns the different status effects will affect you for. The indicators for the status effects are highlighted below. "
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label3" type="Label" parent="Control/TabContainer/Status Effects"]
+margin_left = 140.0
+margin_top = 312.0
+margin_right = 356.0
+margin_bottom = 384.0
+custom_fonts/font = SubResource( 9 )
+text = "Bloom: At the start of the turn restore one health."
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label5" type="Label" parent="Control/TabContainer/Status Effects"]
+margin_left = 532.0
+margin_top = 312.0
+margin_right = 748.0
+margin_bottom = 384.0
+custom_fonts/font = SubResource( 9 )
+text = "Refresh: At the start of the turn draw a card."
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label6" type="Label" parent="Control/TabContainer/Status Effects"]
+margin_left = 532.0
+margin_top = 432.0
+margin_right = 748.0
+margin_bottom = 504.0
+custom_fonts/font = SubResource( 9 )
+text = "Shock: At the start of the turn discard a card. "
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label4" type="Label" parent="Control/TabContainer/Status Effects"]
+margin_left = 140.0
+margin_top = 432.0
+margin_right = 356.0
+margin_bottom = 504.0
+custom_fonts/font = SubResource( 9 )
+text = "Burn: At the start of the turn receive two damage."
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="Control/TabContainer/Status Effects"]
+margin_left = 20.0
+margin_top = 8.0
+margin_right = 855.0
+margin_bottom = 56.0
+custom_fonts/font = SubResource( 9 )
+text = "Some spells will leave a lingering effect for multiple turns. These effects are known collectively as status effects. "
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="Control/TabContainer/Status Effects"]
+position = Vector2( 436, 208 )
+scale = Vector2( 0.424933, 0.411765 )
+texture = ExtResource( 12 )
+
+[node name="Sprite2" type="Sprite" parent="Control/TabContainer/Status Effects"]
+position = Vector2( 92, 344 )
+scale = Vector2( 0.329787, 0.329787 )
+texture = ExtResource( 11 )
+
+[node name="Sprite3" type="Sprite" parent="Control/TabContainer/Status Effects"]
+position = Vector2( 476, 344 )
+scale = Vector2( 0.329787, 0.329787 )
+texture = ExtResource( 8 )
+
+[node name="Sprite4" type="Sprite" parent="Control/TabContainer/Status Effects"]
+position = Vector2( 484, 472 )
+scale = Vector2( 0.329787, 0.329787 )
+texture = ExtResource( 10 )
+
+[node name="Sprite5" type="Sprite" parent="Control/TabContainer/Status Effects"]
+position = Vector2( 92, 472 )
+scale = Vector2( 0.329787, 0.329787 )
+texture = ExtResource( 9 )
+
+[node name="Battles" type="Tabs" parent="Control/TabContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 32.0
+margin_right = -4.0
+margin_bottom = -4.0
+custom_fonts/font = SubResource( 2 )
+
+[node name="Label" type="Label" parent="Control/TabContainer/Battles"]
+margin_left = 20.0
+margin_top = 24.0
+margin_right = 868.0
+margin_bottom = 80.0
+custom_fonts/font = SubResource( 10 )
+text = "During a battle you will take turns with the enemy to play spells. The goal is to bring the enemy's health to zero. "
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="Control/TabContainer/Battles"]
+margin_left = 20.0
+margin_top = 96.0
+margin_right = 868.0
+margin_bottom = 152.0
+custom_fonts/font = SubResource( 10 )
+text = "You will always have the first turn. A turn proceeds as follows:
+Restore normal energy to full.
+Resolve status effects in the order Bloom -> Burn -> Refresh -> Shock.
+Play spells. (Click on the spell to play it)
+End  Turn (Press the end turn button) and Draw cards equal to card draw strength. 
+Enemy's turn. "
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label3" type="Label" parent="Control/TabContainer/Battles"]
+margin_left = 20.0
+margin_top = 256.0
+margin_right = 868.0
+margin_bottom = 328.0
+custom_fonts/font = SubResource( 10 )
+text = "The primary effects of the spells are shown below along with their respective animation indicators. Note that there are also spells which increase elemental energy and ones which apply status effects. "
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Control/TabContainer/Battles"]
+position = Vector2( 92, 392 )
+scale = Vector2( 0.18, 0.22 )
+frames = SubResource( 11 )
+frame = 1
+playing = true
+
+[node name="AnimatedSprite2" type="AnimatedSprite" parent="Control/TabContainer/Battles"]
+position = Vector2( 92, 520 )
+scale = Vector2( 0.18, 0.22 )
+frames = SubResource( 12 )
+frame = 1
+playing = true
+
+[node name="AnimatedSprite3" type="AnimatedSprite" parent="Control/TabContainer/Battles"]
+position = Vector2( 508, 392 )
+scale = Vector2( 0.18, 0.22 )
+frames = SubResource( 13 )
+playing = true
+
+[node name="AnimatedSprite4" type="AnimatedSprite" parent="Control/TabContainer/Battles"]
+position = Vector2( 508, 504 )
+scale = Vector2( 0.18, 0.22 )
+frames = SubResource( 14 )
+frame = 1
+playing = true
+
+[node name="Label4" type="Label" parent="Control/TabContainer/Battles"]
+margin_left = 140.0
+margin_top = 344.0
+margin_right = 436.0
+margin_bottom = 440.0
+custom_fonts/font = SubResource( 10 )
+text = "Damage: Lose health equal to damage taken. If your health falls to zero you lose and must restart. "
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label5" type="Label" parent="Control/TabContainer/Battles"]
+margin_left = 148.0
+margin_top = 472.0
+margin_right = 444.0
+margin_bottom = 568.0
+custom_fonts/font = SubResource( 10 )
+text = "Discard: One (or more) cards at random from the hand is sent to the discard pile. "
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label6" type="Label" parent="Control/TabContainer/Battles"]
+margin_left = 548.0
+margin_top = 472.0
+margin_right = 844.0
+margin_bottom = 568.0
+custom_fonts/font = SubResource( 10 )
+text = "Draw: One (or more) cards are drawn to the hand. If hand limit is reached this will have no effect. "
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label7" type="Label" parent="Control/TabContainer/Battles"]
+margin_left = 548.0
+margin_top = 344.0
+margin_right = 844.0
+margin_bottom = 440.0
+custom_fonts/font = SubResource( 10 )
+text = "Heal: Restore health equal to heal value. It is not possible to heal over your current maximum health."
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Enemy Information and Lore" type="Tabs" parent="Control/TabContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 32.0
+margin_right = -4.0
+margin_bottom = -4.0
+custom_fonts/font = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="Control/TabContainer/Enemy Information and Lore"]
+position = Vector2( 100, 55 )
+scale = Vector2( 0.43, 0.39 )
+texture = ExtResource( 21 )
+
+[node name="Sprite2" type="Sprite" parent="Control/TabContainer/Enemy Information and Lore"]
+position = Vector2( 100, 176 )
+scale = Vector2( 0.43, 0.39 )
+texture = ExtResource( 22 )
+
+[node name="Sprite3" type="Sprite" parent="Control/TabContainer/Enemy Information and Lore"]
+position = Vector2( 100, 506 )
+scale = Vector2( 0.43, 0.39 )
+texture = ExtResource( 24 )
+
+[node name="Sprite4" type="Sprite" parent="Control/TabContainer/Enemy Information and Lore"]
+position = Vector2( 108, 339 )
+scale = Vector2( 0.555, 0.475 )
+texture = ExtResource( 23 )
+
+[node name="Label" type="Label" parent="Control/TabContainer/Enemy Information and Lore"]
+margin_left = 236.0
+margin_top = 24.0
+margin_right = 867.0
+margin_bottom = 113.0
+custom_fonts/font = SubResource( 15 )
+text = "The Leaf Hound is the first hostile spirit you encounter. It uses nature spells. On defeating it you discover that the ruler of the valley, The Storm Queen has ordered your death for trying to learn the secrets of the elements."
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="Control/TabContainer/Enemy Information and Lore"]
+margin_left = 236.0
+margin_top = 152.0
+margin_right = 867.0
+margin_bottom = 241.0
+custom_fonts/font = SubResource( 15 )
+text = "You track down The Toad Sage to discover that location of the Storm Queen, so you can confront her directly. It uses water and nature spells. After being defeated the toad reveals the location of The Storm Queen."
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label3" type="Label" parent="Control/TabContainer/Enemy Information and Lore"]
+margin_left = 236.0
+margin_top = 288.0
+margin_right = 867.0
+margin_bottom = 400.0
+custom_fonts/font = SubResource( 15 )
+text = "Upon reaching the mountain of The Storm Queen, you find it guarded by The Guardian Dragon. The dragon uses fire, nature and water spells. The dragon has protected the valley's ruler for generations and will risk its life for the sake of duty. "
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label4" type="Label" parent="Control/TabContainer/Enemy Information and Lore"]
+margin_left = 236.0
+margin_top = 456.0
+margin_right = 867.0
+margin_bottom = 568.0
+custom_fonts/font = SubResource( 15 )
+text = "After you defeat The Guardian Dragon, The Storm Queen herself descends to eliminate you. The Storm Queen has access to spells from every element. You must use all the knowledge and experience you have gained to challenge her. "
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="bgm" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 25 )
+[connection signal="pressed" from="Back" to="." method="_on_Back_pressed"]

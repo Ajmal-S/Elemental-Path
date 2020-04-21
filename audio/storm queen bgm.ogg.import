@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/storm queen bgm.ogg-ca4c40002603f0ed3e62e885670cdad5.oggstr"
+
+[deps]
+
+source_file="res://audio/storm queen bgm.ogg"
+dest_files=[ "res://.import/storm queen bgm.ogg-ca4c40002603f0ed3e62e885670cdad5.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
